@@ -1,0 +1,27 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+.headerWrapper {
+  background-image: linear-gradient(140deg, #2b80d6 62%, #2c83db 62%);
+  margin-bottom: 40px;
+  h1 {
+    color: #f2f5fa;
+    padding: 20px 0;
+    font-size: 40px;
+    text-align: center;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    margin: 0;
+  }
+}
+
+
