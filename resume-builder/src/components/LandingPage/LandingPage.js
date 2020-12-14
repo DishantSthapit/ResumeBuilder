@@ -3,8 +3,11 @@ import { fadeIn } from 'react-animations';
 import Radium, { StyleRoot } from 'radium';
 import Container from '../shared/Container/Container';
 import Footer from '../shared/Footer/Footer';
+import StepBar from '../shared/StepBar/StepBar';
 import IntroWrapper from './IntroWrapper/IntroWrapper';
+import AccordionComp from '../shared/Accordion/Accordion';
 import './LandingPage.scss';
+import 'rsuite/dist/styles/rsuite-default.css';
 import FacilityWrapper from './FacilityWrapper/FacilityWrapper';
 
 const styles = {
@@ -17,14 +20,17 @@ const styles = {
 const LandingPage = () => {
   return (
     <>
+
       <StyleRoot>
         <div className="headerWrapper">
           <h1 style={styles.fadeIn}>Resume Builder</h1>
         </div>
         <Container>
+          <StepBar />
           <IntroWrapper />
         </Container>
-        <FacilityWrapper/>
+        <FacilityWrapper />
+        <AccordionComp />
         <Footer />
       </StyleRoot>
     </>

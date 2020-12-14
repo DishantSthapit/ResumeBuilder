@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
 import './index.css';
 import LandingPage from '../src/components/LandingPage/LandingPage.js';
 import reportWebVitals from './reportWebVitals';
+import store from '../src/redux/store';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <LandingPage />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <LandingPage />
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 
