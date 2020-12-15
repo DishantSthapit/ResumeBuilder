@@ -1,25 +1,20 @@
 import './IntroWrapper.scss';
 import Button from '../../shared/Button/Button';
-import { useDispatch } from 'react-redux'
+import { useHistory } from "react-router-dom";
 import resumeExample from '../../../assets/images/resumeexample.png';
 
 const IntroWrapper = () => {
-  const dispatch = useDispatch();
-
-  const handleClick = () => {
-    // dispatch({ type: 'SETSTEP', payload: 0 })
-    return dispatch({ type: 'ADDTEMPLATE', payload: 0 })
-  }
+  const history = useHistory();
 
   return (
     <div className="introWrapper">
-      <div className="imageWrapper">
+      {/* <div className="imageWrapper">
         <img className="resumeExample" src={resumeExample} />
         <img className="resumeExample1" src={resumeExample} />
-      </div>
+      </div> */}
       <div className="textWrapper">
-        <div className="welcomeText" >Lets begin the journey of creating beautiflu Resume on you fingertips and Effortlessly make a job-worthy resume that gets you hired faster</div>
-        <Button onClick={() => dispatch({ type: 'SETSTEP', payload: 3 })} title="Get Started +" />
+        {/* <div className="welcomeText" >Lets begin the journey of creating beautiflu Resume on you fingertips and Effortlessly make a job-worthy resume that gets you hired faster</div> */}
+        <Button onClick={() => history.push("/template")} title="Get Started +" />
       </div>
     </div>
   );

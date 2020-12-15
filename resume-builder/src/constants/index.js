@@ -9,7 +9,7 @@ export const FACILITY_ITEMS = [
 ]
 
 export const TEMPLATES =[
-    {id:0, label:"Template 1"},
-    {id:1, label:"Template 2"},
-    {id:2, label:"Template 3"},
+    {id:"0", label:"Template 1"},
+    {id:"1", label:"Template 2"},
+    {id:"2", label:"Template 3"},
 ]

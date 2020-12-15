@@ -1,14 +1,16 @@
 import * as React from 'react';
 import './Accordion.scss';
+import { useHistory } from "react-router-dom";
 import { Accordion, Card } from 'react-bootstrap';
-import { TEMPLATES } from '../../../constants';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const AccordionComp = (props) => {
+  const history = useHistory();
+  const {templates} = props;
   return (
-    <Accordion defaultActiveKey="0">
+    <Accordion defaultActiveKey="1">
       {
-        TEMPLATES.map((template) => (
+        templates.map((template) => (
           <Card>
             <Card.Header>
               <Accordion.Toggle variant="link" eventKey={template.id}>
@@ -16,7 +18,7 @@ const AccordionComp = (props) => {
               </Accordion.Toggle>
             </Card.Header>
             <Accordion.Collapse eventKey={template.id}>
-              <Card.Body>Hello! I'm the body</Card.Body>
+              <button onClick={()=> history.push("/template")}>Test</button>
             </Accordion.Collapse>
           </Card>
         ))

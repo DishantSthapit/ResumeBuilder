@@ -1,6 +1,7 @@
 import React from 'react';
 import { fadeIn } from 'react-animations';
 import Radium, { StyleRoot } from 'radium';
+import { useDispatch } from 'react-redux'
 import Container from '../shared/Container/Container';
 import Footer from '../shared/Footer/Footer';
 import StepBar from '../shared/StepBar/StepBar';
@@ -18,20 +19,26 @@ const styles = {
 }
 
 const LandingPage = () => {
+  const dispatch = useDispatch();
+
+  React.useEffect(()=>{
+    dispatch({type: 'SETSTEP', payload: 0})
+  },[])
+
   return (
     <>
 
       <StyleRoot>
-        <div className="headerWrapper">
+        {/* <div className="headerWrapper">
           <h1 style={styles.fadeIn}>Resume Builder</h1>
-        </div>
+        </div> */}
         <Container>
           <StepBar />
           <IntroWrapper />
         </Container>
-        <FacilityWrapper />
+        {/* <FacilityWrapper />
         <AccordionComp />
-        <Footer />
+        <Footer /> */}
       </StyleRoot>
     </>
 
