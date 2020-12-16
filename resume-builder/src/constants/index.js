@@ -13,3 +13,11 @@ export const TEMPLATES =[
     {id:"1", label:"Template 2"},
     {id:"2", label:"Template 3"},
 ]
+
+
+export const STEPBAR =[
+    {id:0, label:"Get Started", route:"/"},
+    {id:1, label:"Choose Template", route:"/template"},
+    {id:2, label:"Add Details", route:"/"},
+    {id:3, label:"Done", route:"/"},
+]
