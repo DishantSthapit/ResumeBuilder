@@ -3,23 +3,20 @@ import './Accordion.scss';
 import { useHistory } from "react-router-dom";
 import { Accordion, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import TemplatePreview from '../Template/TemplatePreview/TemplatePreview';
 
 const AccordionComp = (props) => {
-  const history = useHistory();
   const {templates} = props;
   return (
     <Accordion defaultActiveKey="1">
       {
         templates && templates.map((template) => (
-          <Card key={template.id}>
-            <Card.Header>
-              <Accordion.Toggle variant="link" eventKey={template.id}>
-                {template.label}
-              </Accordion.Toggle>
-            </Card.Header>
+          <Card>
+            <Accordion.Toggle as={Card.Header} eventKey={template.id}>
+              {template.label}
+            </Accordion.Toggle>
             <Accordion.Collapse eventKey={template.id}>
-              <><button onClick={()=> history.push("/template")}>Test</button>
-              <button onClick={()=> history.push("/template")}>Test</button><button onClick={()=> history.push("/template")}>Test</button><button onClick={()=> history.push("/template")}>Test</button><button onClick={()=> history.push("/template")}>Test</button><button onClick={()=> history.push("/template")}>Test</button><button onClick={()=> history.push("/template")}>Test</button><button onClick={()=> history.push("/template")}>Test</button><button onClick={()=> history.push("/template")}>Test</button></>
+              <TemplatePreview id={template.id} heading={template.heading} info={template.info} thumbnail={template.thumbnail}/>
             </Accordion.Collapse>
           </Card>
         ))

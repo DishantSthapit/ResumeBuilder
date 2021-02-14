@@ -9,6 +9,7 @@ import {
   Link
 } from "react-router-dom";
 import LandingPage from '../src/components/LandingPage/LandingPage.js';
+import FormLanding from '../src/components/FormLanding/FormLanding.js';
 import ChooseTemplatePage from '../src/components/ChooseTemplatePage/ChooseTemplatePage.js';
 import reportWebVitals from './reportWebVitals';
 import store from '../src/redux/store';
@@ -23,6 +24,9 @@ ReactDOM.render(
           </Route>
           <Route path="/template">
             <ChooseTemplatePage />
+          </Route>
+          <Route path="/form">
+            <FormLanding />
           </Route>
         </Switch>
       </Router>

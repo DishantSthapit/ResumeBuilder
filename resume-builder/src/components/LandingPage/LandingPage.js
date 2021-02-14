@@ -8,23 +8,27 @@ import IntroWrapper from './IntroWrapper/IntroWrapper';
 import './LandingPage.scss';
 import 'rsuite/dist/styles/rsuite-default.css';
 import FacilityWrapper from './FacilityWrapper/FacilityWrapper';
+import { useSetLoader } from '../../hooks/useSetLoader';
+import Loader from '../shared/Loader/Loader';
 
 const LandingPage = () => {
+  const loader = useSetLoader(0);
   return (
     <>
-      <StyleRoot>
-        <HeaderBar title="Resume Builder" />
-        <Container>
-          <StepBar />
-          <IntroWrapper />
-        </Container>
-        <FacilityWrapper />
-        <Footer />
-      </StyleRoot>
+      {
+        loader ? <Loader /> : (
+          <StyleRoot>
+            <HeaderBar title="Resume Builder" />
+            <Container>
+              <StepBar />
+              <IntroWrapper />
+            </Container>
+            <FacilityWrapper />
+            <Footer />
+          </StyleRoot>
         )
-
+      }
     </>
-
   );
 }
 

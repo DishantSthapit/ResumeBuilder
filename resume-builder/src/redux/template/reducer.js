@@ -1,7 +1,7 @@
 import { ADDTEMPLATE } from './type';
 
 const INITIAL_STATE = {
-    templateNo: null,
+    templateNo: 0,
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
