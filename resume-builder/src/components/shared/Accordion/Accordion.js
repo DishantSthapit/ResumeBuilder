@@ -1,22 +1,21 @@
 import * as React from 'react';
 import './Accordion.scss';
 import { Accordion, Card } from 'react-bootstrap';
-import { TEMPLATES } from '../../../constants';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import TemplatePreview from '../Template/TemplatePreview/TemplatePreview';
 
 const AccordionComp = (props) => {
+  const { templates } = props;
   return (
-    <Accordion defaultActiveKey="0">
+    <Accordion defaultActiveKey="1">
       {
-        TEMPLATES.map((template) => (
+        templates && templates.map((template) => (
           <Card>
-            <Card.Header>
-              <Accordion.Toggle variant="link" eventKey={template.id}>
-                {template.label}
-              </Accordion.Toggle>
-            </Card.Header>
+            <Accordion.Toggle as={Card.Header} eventKey={template.id}>
+              {template.label}
+            </Accordion.Toggle>
             <Accordion.Collapse eventKey={template.id}>
-              <Card.Body>Hello! I'm the body</Card.Body>
+              <TemplatePreview id={template.id} heading={template.heading} info={template.info} thumbnail={template.thumbnail} />
             </Accordion.Collapse>
           </Card>
         ))
