@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleRoot } from 'radium';
 import { useDispatch } from 'react-redux'
 import Container from '../shared/Container/Container';
-import { useSetLoader } from '../../hooks/useSetLoader'; 
+import { useSetLoader } from '../../hooks/useSetLoader';
 import { TEMPLATES } from '../../constants';
 import StepBar from '../shared/StepBar/StepBar';
 import Loader from '../shared/Loader/Loader';
@@ -15,16 +15,16 @@ import AccordionComp from '../shared/Accordion/Accordion';
 const ChooseTemplatePage = () => {
   const dispatch = useDispatch();
   const loading = useSetLoader(500);
-  
-  React.useEffect(()=>{
-    dispatch({type: 'SETSTEP', payload: 1})
-  },[])
+
+  React.useEffect(() => {
+    dispatch({ type: 'SETSTEP', payload: 1 })
+  }, [])
 
   return (
     <>{
       loading ? <Loader /> : (
         <StyleRoot>
-        <HeaderBar title="Explore Templates"/>
+          <HeaderBar title="Explore Templates" />
           <Container>
             <StepBar />
             <AccordionComp templates={TEMPLATES} />

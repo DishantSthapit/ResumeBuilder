@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import './TemplatePreview.scss';
 import { useHistory } from "react-router-dom";
@@ -23,7 +24,7 @@ const TemplatePreview = (props) => {
                     <div>{info}</div>
                     <Button onClick={() => handleClick(id)} title="Select" />
                 </div>
-                <img src={thumbnail}></img>
+                <img src={thumbnail} />
             </div>
         </div>
     );

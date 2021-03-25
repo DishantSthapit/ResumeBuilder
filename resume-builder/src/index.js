@@ -9,6 +9,7 @@ import {
   Link
 } from "react-router-dom";
 import LandingPage from '../src/components/LandingPage/LandingPage.js';
+import PdfComponent from '../src/components/PdfComponent/PdfComponent';
 import FormLanding from '../src/components/FormLanding/FormLanding.js';
 import ChooseTemplatePage from '../src/components/ChooseTemplatePage/ChooseTemplatePage.js';
 import reportWebVitals from './reportWebVitals';
@@ -27,6 +28,9 @@ ReactDOM.render(
           </Route>
           <Route path="/form">
             <FormLanding />
+          </Route>
+          <Route path="/pdf">
+            <PdfComponent />
           </Route>
         </Switch>
       </Router>

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import './IntroWrapper.scss';
 import Button from '../../shared/Button/Button';
 import { useHistory } from "react-router-dom";

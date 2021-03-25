@@ -12,20 +12,22 @@ import { useSetLoader } from '../../hooks/useSetLoader';
 import Loader from '../shared/Loader/Loader';
 
 const LandingPage = () => {
-  const loader = useSetLoader(0);
+  const loader = useSetLoader(1000);
   return (
     <>
       {
         loader ? <Loader /> : (
-          <StyleRoot>
-            <HeaderBar title="Resume Builder" />
-            <Container>
-              <StepBar />
-              <IntroWrapper />
-            </Container>
-            <FacilityWrapper />
-            <Footer />
-          </StyleRoot>
+          <div>
+            <StyleRoot>
+              <HeaderBar title="Resume Builder" />
+              <Container>
+                <StepBar />
+                <IntroWrapper />
+              </Container>
+              <FacilityWrapper />
+              <Footer />
+            </StyleRoot>
+          </div>
         )
       }
     </>

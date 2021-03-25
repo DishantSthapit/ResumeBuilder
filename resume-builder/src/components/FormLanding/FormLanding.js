@@ -7,11 +7,14 @@ import FormVanilla from './FormValidation/FormValidation';
 import Footer from '../shared/Footer/Footer';
 import HeaderBar from '../shared/HeaderBar/HeaderBar';
 import './FormLanding.scss';
+import { useSelector } from 'react-redux';
 import { useSetLoader } from '../../hooks/useSetLoader';
 import Loader from '../shared/Loader/Loader';
 
+
 const FormLanding = () => {
   const dispatch = useDispatch();
+  const userData = useSelector(state => state.userReducer);
   const loader = useSetLoader(500);
 
   React.useEffect(() => {
@@ -30,9 +33,16 @@ const FormLanding = () => {
     }
     return null;
   };
-  
+
   const requiredValidation = (fieldName, fieldValue) => {
-    if (fieldValue.trim() === '') {
+    if (fieldValue === '') {
+      return `${fieldName} is required`;
+    }
+    return null;
+  }
+
+  const numberValidation = (fieldName, fieldValue) => {
+    if (fieldValue < 0) {
       return `${fieldName} is required`;
     }
     return null;
@@ -51,36 +61,30 @@ const FormLanding = () => {
     }
     return 'Please enter a valid email';
   };
-  
-  const ageValidation = age => {
-    if (!age) {
-      return 'Age is required';
-    }
-    if (age < 18) {
-      return 'Age must be at least 18';
-    }
-    if (age > 99) {
-      return 'Age must be under 99';
-    }
-    return null;
-  };
-  
+
+
   const validate = {
     firstName: name => nameValidation('First Name', name),
     lastName: name => nameValidation('Last Name', name),
     email: emailValidation,
-    age: ageValidation,
     summary: name => requiredValidation('Summary', name),
+    phoneNumber: number => numberValidation('Phone Number', number),
+    address: address => requiredValidation('Address', address),
+    title: title => requiredValidation('Title', title),
+    skills: skills => requiredValidation('Skills', skills),
   };
-  
+
   const initialValues = {
-    age: 10,
-    email: 'no@email',
-    firstName: 'Mary',
-    lastName: 'Jane',
-    summary: 'I am a developer',
+    email: userData.email,
+    firstName: userData.firstName,
+    lastName: userData.lastName,
+    summary: userData.summary,
+    phoneNumber: userData.phoneNumber,
+    address: userData.address,
+    title: userData.title,
+    skills: userData.skills
   };
-  
+
   return (
     <>
       {
